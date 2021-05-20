@@ -32,23 +32,34 @@ class Database
 
         #loop through all the recods to create user object
         records.each { |record|
-            usr = User.new(record["id"], record["name"], record["userId"])
+            usr = User.new(record["id"], record["name"], record["username"])
            #add new_users to array of user
            @users.push(usr)
         }
-
-
-
     end
 
+    # get all accounts object
     def getAccounts
         return @accounts
 
     end
 
+    #get all users object
     def getUsers
         return @users
+    end
 
+    # Looks through all users to find user with a speific username
+    def getUserByUsername(username)
+        
+        @users.each {|user| 
+            if user.getUsername == username
+                return user
+            end
+        }
+
+        return nil
+        
     end
         
 

@@ -1,18 +1,6 @@
 [
   {
     "id": 1,
-    "name": "Saving Acount",
-    "balance": 765,
-    "userId": 1
-  },
-  {
-    "id": 2,
-    "name": "Transaction Acount",
-    "balance": 780,
-    "userId": 1
-  },
-  {
-    "id": 1,
     "name": "Vicky Pham",
     "username": "vicky"
   },
@@ -20,5 +8,15 @@
     "id": 2,
     "name": "Alex Victor",
     "username": "alex"
+  },
+  {
+    "id": 3,
+    "name": "Keaton Victor",
+    "username": "keaton"
+  },
+  {
+    "id": 4,
+    "name": "Grace Victor",
+    "username": "grace"
   }
 ]
