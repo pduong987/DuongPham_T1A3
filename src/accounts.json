@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Saving Acount",
+    "balance": 765,
+    "userId": 1
+  },
+  {
+    "id": 2,
+    "name": "Transaction Acount",
+    "balance": 780,
+    "userId": 1
+  },
+  {
+    "id": 3,
+    "name": "Saving Acount",
+    "balance": 65000,
+    "userId": 1
+  },
+  {
+    "id": 4,
+    "name": "Transaction Acount",
+    "balance": 3000,
+    "userId": 2
+  },
+  {
+    "id": 5,
+    "name": "Mortgage Acount",
+    "balance": 60000,
+    "userId": 2
+  }
+]
