@@ -1,4 +1,5 @@
 require_relative "database"
+require_relative "actions"
 
 #Creat a new variable database
 database = Database.new
@@ -39,32 +40,52 @@ if user != nil
         puts "Sorry you dont have any accounts!"
     end
     puts ""
-    userAccountOption = gets.chomp
+    accOpt = gets.chomp
 
-    balance = loggedInUserAccounts[userAccountOption.to_i].getBalance
+    account = loggedInUserAccounts[accOpt.to_i]
 
-    puts ""
-    puts "Your Balance = #{balance}" 
-    puts ""
-    
-    
-    
-    # #List available option eg deposite , withdraw transfer
-    # puts "============================="
-    # puts "============================="
-    # puts "||      1- Deposite        ||"
-    # puts "||      2- Withdraw        ||"
-    # puts "||      3- Balance         ||" 
-    # puts "||      4- Transfer        || "
-    # puts "||      5- Mortgage        ||"
-    # puts "||      6- Entertainment   ||"
-    # puts "============================="
-    # puts "============================="
-    # puts
-    # puts
-    # get user option
-   
-   
+    if account != nil
+
+        # #List available option eg deposite , withdraw transfer
+        puts "============================="
+        puts "What would you like to do with this account"
+        puts "============================="
+        puts "||      1- Deposite        ||"
+        puts "||      2- Withdraw        ||"
+        puts "||      3- Balance         ||" 
+        puts "||      4- Transfer        || "
+        puts "||      5- Mortgage        ||"
+        puts "||      6- Entertainment   ||"
+        puts "============================="
+        puts "============================="
+        puts
+        puts
+
+        action = gets.chomp
+
+        if action == "1"
+            puts "Please enter the amount: "
+            amount = gets.chomp
+            puts "Thank you, we deposited $#{amount} to account #{account.getName}"
+        elsif action == "2"
+            puts "Please enter the amount:"
+            amount = gets.chomp
+            puts "Here is $#{amount}. "
+        elsif action == "3"
+            puts "Your balance for #{account.getName} is #{account.getBalance}"
+        elsif action == "4"
+           transfer
+        elsif action == "5"
+            puts "Have you got a mortgage account with us?"
+        elsif action == "6"
+            puts "Hope you have enjoy our recommendation. "
+        else
+            puts "Sorry thats not a valid action!"
+        end
+
+    else
+        puts "Sorry, that is not a valid account!"
+    end
    
     #Create diffirent fuction 
     
@@ -74,5 +95,4 @@ if user != nil
 else
     puts "Sorry #{username}, wrong input! " 
 end
-
 
