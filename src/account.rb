@@ -18,7 +18,15 @@ class Account
 
     def getBalance
         return @balance
-    end    
+    end  
+    
+    def deposite(amount)
+        @balance += amount
+    end
+
+    def withdraw(amount)
+        @balance -= amount
+    end
 
 
 

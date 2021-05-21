@@ -67,11 +67,13 @@ if user != nil
         if action == "1"
             puts "Please enter the amount: "
             amount = gets.chomp
-            puts "Thank you, we deposited $#{amount} to account #{account.getName}"
+            account.deposite(amount.to_i)
+            puts "Thank you, we deposited $#{amount} to account #{account.getName}, your new balance is #{account.getBalance}"
         elsif action == "2"
             puts "Please enter the amount:"
             amount = gets.chomp
-            puts "Here is $#{amount}. "
+              account.deposite(amount.to_i)
+            puts "Thank you, we deposited $#{amount} to account #{account.getName}, your new balance is #{account.getBalance}"
         elsif action == "3"
             puts "Your balance for #{account.getName} is #{account.getBalance}"
         elsif action == "4"
