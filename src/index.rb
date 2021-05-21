@@ -16,18 +16,18 @@ user = database.getUserByUsername(username)
 
 #Loop to check if the user name is exits, will return user name with gretting,
 if user != nil
-    puts "Hi " + user.getName + "\n\n"
-    
-    #Create a show menu function
-
+    puts "Hi #{user.getName} " 
+    #new variable userId by get Id out of the user
     userId = user.getId
-
+    #pass the user information to new array loggedInUserAccounts
     loggedInUserAccounts = database.getAccountsByUserId(userId)
-
+    #if the length of loggedInuserAccounts greater than 0
     if loggedInUserAccounts.length > 0
+        #Then print this
         puts "Please select which account: "
         puts ""
         puts "-----------------------------"
+        #Loop through the array and get the account and index 
         loggedInUserAccounts.each_with_index { |account, index|
           
             puts " #{index}- #{account.getName}   " 
@@ -35,18 +35,19 @@ if user != nil
             puts "-----------------------------"
           
         }
-
+        #if length of the array no greater than 0, then below msg will print out
     else
         puts "Sorry you dont have any accounts!"
     end
     puts ""
     accOpt = gets.chomp
-
+    #new account variable will be equal to the account option
     account = loggedInUserAccounts[accOpt.to_i]
 
+    #loop to see if the account exits
     if account != nil
 
-        # #List available option eg deposite , withdraw transfer
+        #List available option eg deposite , withdraw transfer
         puts "============================="
         puts "What would you like to do with this account"
         puts "============================="
@@ -62,7 +63,7 @@ if user != nil
         puts
 
         action = gets.chomp
-
+        #Loop through to get each option out from the action input
         if action == "1"
             puts "Please enter the amount: "
             amount = gets.chomp
@@ -86,8 +87,6 @@ if user != nil
     else
         puts "Sorry, that is not a valid account!"
     end
-   
-    #Create diffirent fuction 
     
 
 
