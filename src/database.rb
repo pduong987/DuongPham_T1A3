@@ -44,6 +44,17 @@ class Database
 
     end
 
+    def getAccountsByUserId(userId)
+        userAccounts = []
+        #Loopt through to push accounts into userAccounts
+        @accounts.each { |account|
+            if account.getUserId == userId
+                userAccounts.push(account)
+            end
+        }
+        return userAccounts
+    end
+
     #get all users object
     def getUsers
         return @users
@@ -60,8 +71,7 @@ class Database
 
         return nil
         
-    end
-        
+    end 
 
-    end
+end
 

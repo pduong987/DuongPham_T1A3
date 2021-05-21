@@ -8,4 +8,18 @@ class Account
         @userId = userId
     end
 
+    def getUserId
+        return @userId
+    end
+
+    def getName
+        return @name
+    end
+
+    def getBalance
+        return @balance
+    end    
+
+
+
 end

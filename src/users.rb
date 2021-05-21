@@ -6,6 +6,11 @@ class User
         @username = username
     end
 
+    # Get the id of the user
+    def getId
+        return @id
+    end
+
     #Get all the name object
     def getName
         return @name
@@ -15,5 +20,7 @@ class User
     def getUsername
         return @username
     end
+
+  
 
 end
