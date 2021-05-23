@@ -2,11 +2,20 @@ require_relative "database"
 require_relative "actions"
 require "colorize"
 require "tty-prompt"
+require "google_places"
 
 prompt = TTY::Prompt.new()
 
+# This function securely gets the API key needed to talk to Google Places API
+def getGoogleApiKey
+    return File.read("../google-maps-key.txt").to_s
+end
 
+# Here we get the key using the secure function
+googleMapApiKey = getGoogleApiKey
 
+# Create a client to make calling the Google Places API... super easy
+gmc = GooglePlaces::Client.new(googleMapApiKey)
 
 def display_ascii_art 
     return File.read("art.txt")
@@ -90,7 +99,7 @@ if user != nil
             account.deposite(amount.to_i)
             puts "Thank you, we deposited $#{amount} to your #{account.getName}, your new balance is $#{account.getBalance}"
             puts "Would you like to do anythingesle?"
-            
+
         elsif action == "Withdraw"
             puts "Please enter the amount:"
             amount = gets.chomp
@@ -106,7 +115,29 @@ if user != nil
             #Get mortgage calculator from action. 
             mortgage_calculator
         elsif action == "Entertainment"
-            puts "Hope you have enjoy our recommendation. "
+
+            # Ask the user where they want to go... we will use the query directly on the Google Places API
+            puts "Let's have some fun... what are you looking for ?"
+            query = gets.chomp
+
+            # Call the Google Places API with query we got from use
+            places = gmc.spots_by_query(query)
+
+            puts ""
+
+            available_places = []
+
+            # Make a simple array of places with the name and address
+            places.each {|place|
+                available_places.push("#{place.name} at #{place.formatted_address}")
+            }
+
+            # Ask the user to select one of those places...
+            selected_place = prompt.select("I found these places, where do you want to go...", available_places)
+
+            # Simple message to say we are going to that place... could be much more in the future
+            puts "Thanks... we will go to " + selected_place
+            
         elsif action == "Exit"
             puts "Thanks for using Banks Smart. Good bye!"
             exit
