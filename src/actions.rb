@@ -40,6 +40,6 @@ def mortgage_calculator
         puts "Sorry, please input 'home' or 'investment' only"
     end
     
-    puts "Thank you for all information input. Your borrowing capacity is #{borrowing_capacity} with #{interest_rate}%."
+    puts "Thank you for all information input. Your borrowing capacity is #{borrowing_capacity} with #{interest_rate}% interest rate."
     
 end
