@@ -33,13 +33,19 @@ def mortgage_calculator
     #loop what the house purchase type for inversment or home
     if purchase_type == "home"
         interest_rate = 2.0
+
+        puts "Thank you for all information input. Your borrowing capacity is #{borrowing_capacity} with #{interest_rate}% interest rate."
+        
     elsif purchase_type == "investment"
         interest_rate = 4.0
+
+        puts "Thank you for all information input. Your borrowing capacity is #{borrowing_capacity} with #{interest_rate}% interest rate."        
     else   
         # WRONG SHOW ERROR
         puts "Sorry, please input 'home' or 'investment' only"
+
     end
     
-    puts "Thank you for all information input. Your borrowing capacity is #{borrowing_capacity} with #{interest_rate}% interest rate."
+
     
 end
