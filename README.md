@@ -24,7 +24,7 @@ _____
 
 #### **App Goal:** 
 
-This bank app will provide an overview of how the Bank Smart Terminal App work. The primary purpose of the app is to provide an easy to use and simplified banking experience, e.g simple display of what you want to see without extra functionality. Banking is not difficult when things are listed clearly, as anyone can understand it. Outstanding balance, bank details, deposit, bills pay, saving, mortgager or even retirement plans can be calculated in an accessible way with innovative technology so you can save lots of time in modern life. During Covid and increased streess, people will tend to spend more money on going out, takeaways and a short trips inside the country. The Bank Smart Terminal App can also recommend which locations to visit, which restaurant and where to spend an your time, doing fun activities. 
+This bank app will provide an overview of how the Bank Smart Terminal App work. The primary purpose of the app is to provide an easy way to use and simplified banking experience, e.g simple display of what you want to see without extra functionality. Banking is not difficult when things are listed clearly, as anyone can understand it. Outstanding balance, bank details, deposit, bills pay, saving, mortgager or even retirement plans can be calculated in an accessible way with innovative technology so you can save lots of time in modern life. During Covid and increased streess, people will tend to spend more money on going out, takeaways and a short trips inside the country. The Bank Smart Terminal App can also recommend which locations to visit, which restaurant and where to spend an your time, doing fun activities. 
 
 
 

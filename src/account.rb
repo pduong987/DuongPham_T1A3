@@ -19,6 +19,7 @@ class Account
     def getBalance
         return @balance
     end  
+
     
     def deposite(amount)
         @balance += amount

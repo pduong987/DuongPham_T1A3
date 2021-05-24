@@ -14,7 +14,7 @@ end
 # Here we get the key using the secure function
 googleMapApiKey = getGoogleApiKey
 
-# Create a client to make calling the Google Places API... super easy
+# Create a client to make calling the Google Places API
 gmc = GooglePlaces::Client.new(googleMapApiKey)
 
 def display_ascii_art 
@@ -140,27 +140,35 @@ while show_menu_1 == true
                             
                             elsif action == "Entertainment"
 
-                                # Ask the user where they want to go. Usee the query directly on the Google Places API
-                                puts "Let's have some fun... what are you looking for ?"
-                                query = gets.chomp
+                                begin
 
-                                # Call the Google Places API with query we got from user
-                                places = gmc.spots_by_query(query)
+                                    # Ask the user where they want to go. Usee the query directly on the Google Places API
+                                    puts "Let's have some fun... what are you looking for ?"
+                                    query = gets.chomp
 
-                                puts ""
+                                    # Call the Google Places API with query we got from user
+                                    places = gmc.spots_by_query(query)
 
-                                available_places = []
+                                    puts ""
 
-                                # Make a simple array of places with the name and address
-                                places.each {|place|
-                                    available_places.push("#{place.name} at #{place.formatted_address}")
-                                }
+                                    available_places = []
 
-                                # Ask the user to select one of those places...
-                                selected_place = prompt.select("I found these places, where do you want to go...", available_places)
+                                    # Make a simple array of places with the name and address
+                                    places.each {|place|
+                                        available_places.push("#{place.name} at #{place.formatted_address}")
+                                    }
 
-                                # Simple message to say we are going to that place... could be much more in the future
-                                puts "Thanks... we will go to " + selected_place
+                                    
+
+                                    # Ask the user to select one of those places...
+                                    selected_place = prompt.select("I found these places, where do you want to go...", available_places)
+
+                                    # Simple message to say we are going to that place... could be much more in the future
+                                    puts "Thanks... we will go to " + selected_place
+
+                                rescue
+                                    puts "Ooops somehting broken"
+                                end
 
                             elsif action == "Exit"
                                 puts "Thanks for using Banks Smart. Good bye!"
