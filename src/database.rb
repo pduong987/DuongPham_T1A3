@@ -5,9 +5,6 @@ require_relative "users"
 class Database
     def initialize()
 
-
-
-
         #Load Account Json into ruby struture
         account_json = File.read("accounts.json")
         records = JSON.parse(account_json)
