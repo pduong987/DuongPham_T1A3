@@ -130,7 +130,7 @@ _______
 
 ____
 
-![bank_smart_app](/Users/duongpham/git/pduong987/DuongPham_T1A3/docs/bank_smart_app.png)
+![bank_smart_app](./docs/bank_smart_app.png)
 
 
 
@@ -148,7 +148,10 @@ You must include:
 ____
 
 ```
-# Steps to install application
-gem install 'google_places'
+git clone https://github.com/pduong987/DuongPham_T1A3.git
+cd ./DuongPham_T1A3/src
+bundle install
+chmod u+x run-unix.sh
+./run-unix.sh
 ```
 
