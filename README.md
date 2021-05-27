@@ -1,6 +1,8 @@
 **Question 4:** Provide a link to your source control repository
 
-
+```
+https://github.com/pduong987/DuongPham_T1A3.git
+```
 
 
 
@@ -88,7 +90,7 @@ The Bank Smart app uses a simple menu selection system and loops to allow the us
 
 Per Question 8 flow diagram, a user interacts with the application as follows:
 
-1. **Start Applicat (e.g run-unix.sh)**
+1. **Start Application (e.g run-unix.sh)**
 
    The app fires!
 
@@ -135,6 +137,21 @@ ____
 
 
 ____________
+
+**Question 9: Develop** an implementation plan which:
+\- **outlines** how each feature will be implemented and a checklist of tasks for each feature
+\- prioritise the implementation of different features, or checklist items within a feature
+\- provide a deadline, duration or other time indicator for each feature or checklist/checklist-item
+
+Utilise a suitable project management platform to track this implementation plan
+
+\> Your checklists for each feature should have at least 5 items.
+
+------
+
+Please refer to Trello board screenshots in doc directory.
+
+----
 
 
 
