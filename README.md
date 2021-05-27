@@ -72,7 +72,7 @@ ________
 | 2. Deposite/ Withdraw | The Bank Smart app allows them to draw money from their account. Each account has a current balance which will decrease every time withdrawal happen. At the same time, the account balance will increase if the User puts money in the Deposit account. |
 | 3. Transfer           | As users' details are already set up, the User can transfer money between the bank account and the bank balance. Bank balance will be changed as money has been moving around between all those banks. Therefore, the amount balance in each bank account also increases or decreases depending on what action the User makes. |
 | 4. Mortgage           | User will be asked for some personal detail of how much they earn in a year, expenses each month, and how much the house they want to buy with the mortgage option. The mortgage calculator which got desire in the app will do the calculation at the back end to see if the User can have a mortgage. The Bank Smart app would give them some details to book in a meeting with a proper banker to get a mortgage if they qualified to do so. Other than that, the Bank app will let them know that they can not get a mortgage and move to another function if they want to. |
-| 5. Entertainment      | of the country. It is safer to have a holiday in Australia or visit some famous places at the weekend with family and friends. An entertainment option got created. It will link to a Website API to provide people with popular areas this week or months that people should come and visit. User can visit those places through the bank app to get a reservation and pay straight from the bank. If the User doesn't want to see or look through those website options, the bank app can lead them back to the bank option again or log out if the User wants. |
+| 5. Entertainment      | Users will be asked if they want to do something fun and provide and input to ask the terminal app. Under the covers this "query" is sent directly to the Google Places API which will return a range of suggestions such as "pizza near surry hills". The user can then select one of the places, with a simple message being returned. |
 
 
 
@@ -83,6 +83,40 @@ Your outline must include:
 \- how the user will find out how to interact with / use each feature
 \- how the user will interact with / use each feature
 \- how errors will be handled by the application and displayed to the user
+
+The Bank Smart app uses a simple menu selection system and loops to allow the user navigate the application.
+
+Per Question 8 flow diagram, a user interacts with the application as follows:
+
+1. **Start Applicat (e.g run-unix.sh)**
+
+   The app fires!
+
+2. **User provides username**
+
+   The username is used to identify the user within our JSON database (See username field)
+
+3. **User selects one of their accounts**
+
+   A user will be presented with a list of all their available accounts for selection
+
+4. User selects an action for the account
+
+   Based on the selected account, the user can select an action such as Deposit or Account
+
+5. **Asks if user wants to continue**
+
+   The user is then asked if they want to perform another action. If they do they select the next action, else go back to login
+
+
+
+**<u>Error Handling</u>**
+
+Through the control flow there are if else blocks and resuce statements to prevent failure
+
+Further to this, a series of sub while loops control which menu to show
+
+With a final sigterm (Signal Termination) being used to exist the application entirely
 
 _________
 
@@ -96,7 +130,7 @@ _______
 
 ____
 
-![](/Users/duongpham/git/pduong987/DuongPham_T1A3/docs/bank_smart_app.png)
+![bank_smart_app](/Users/duongpham/git/pduong987/DuongPham_T1A3/docs/bank_smart_app.png)
 
 
 
@@ -104,14 +138,17 @@ ____________
 
 
 
-**Question 9:** **Develop** an implementation plan which:
-\- **outlines** how each feature will be implemented and a checklist of tasks for each feature
-\- prioritise the implementation of different features, or checklist items within a feature
-\- provide a deadline, duration or other time indicator for each feature or checklist/checklist-item
+**Question 10:** **Design** help documentation which includes a set of instructions which accurately **describe** how to use and install the application.
 
-Utilise a suitable project management platform to track this implementation plan
-
-\> Your checklists for each feature should have at least 5 items.
+You must include:
+\- steps to install the application
+\- any dependencies required by the application to operate
+\- any system/hardware requirements
 
 ____
+
+```
+# Steps to install application
+gem install 'google_places'
+```
 
