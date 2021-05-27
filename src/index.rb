@@ -25,14 +25,13 @@ def display_ascii_art
 database = Database.new  
 
 show_menu_1 = true
-show_menu_2 = true
-show_menu_3 = true
-show_menu_4 = true
 
 # Menu 1 = The Main login menu
 
 # While the user wants to see Menu 1
 while show_menu_1 == true
+
+    show_menu_2 = true
 
     # Show the welcome banner
     puts display_ascii_art.red
@@ -62,6 +61,8 @@ while show_menu_1 == true
       
             #if the length of loggedInuserAccounts greater than 0
             if loggedInUserAccounts.length > 0
+
+                show_menu_3 = true
 
                 # Holds a list of account options based on selected user
                 account_options = []
@@ -101,6 +102,7 @@ while show_menu_1 == true
                         #Using gem TTY-promt to slect the coices.
                         choices = ["Deposite", "Withdraw", "Balance", "Transfer", "Mortgage Calculator", "Entertainment", "Exit"]
 
+                        show_menu_4 = true
 
                         # Show menu for selecting what to do with account
                         while show_menu_4 == true
